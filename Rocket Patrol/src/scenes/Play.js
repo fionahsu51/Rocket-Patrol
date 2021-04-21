@@ -36,7 +36,7 @@ class Play extends Phaser.Scene {
         this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'spaceship', 0, 10).setOrigin(0,0);
 
          // green UI background
-        this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x00FF00).setOrigin(0, 0);
+        this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x4972DC).setOrigin(0, 0);
 
         // white borders
         this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
@@ -55,10 +55,10 @@ class Play extends Phaser.Scene {
 
          // display score
          let scoreConfig = {
-         fontFamily: 'Courier',
+         fontFamily: 'Indie Flower',
          fontSize: '28px',
-         backgroundColor: '#F3B141',
-         color: '#843605',
+         backgroundColor: '#E38AC4',
+         color: '#ebe5dd',
          align: 'right',
          padding: {
          top: 5,
