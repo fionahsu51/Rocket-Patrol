@@ -69,7 +69,22 @@ class Play extends Phaser.Scene {
          }
          this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
 
-         
+
+         let fireConfig = {
+            fontFamily: 'Indie Flower',
+            fontSize: '28px',
+            backgroundColor: '#484473',
+            color: '#ebe5dd',
+            align: 'center',
+            padding: {
+            top: 5,
+            bottom: 5,
+            },
+            fixedWidth: 100
+            }
+            
+        // Display FIRE!
+        this.fire = this.add.text( borderUISize + borderPadding*23, borderUISize + borderPadding*2, 'FIRE!', fireConfig);
  
         // GAME OVER flag
         this.gameOver = false;
@@ -82,6 +97,23 @@ class Play extends Phaser.Scene {
             this.gameOver = true;
         }, null, this);
 
+        
+
+        let timeConfig = {
+            fontFamily: 'Indie Flower',
+            fontSize: '28px',
+            backgroundColor: '#E38AC4',
+            color: '#ebe5dd',
+            align: 'right',
+            padding: {
+            top: 5,
+            bottom: 5,
+            },
+            fixedWidth: 100
+            }
+            this.timeRight = this.add.text(game.config.width - borderUISize - borderPadding*10, borderUISize + borderPadding*2, this.clock, timeConfig);
+
+            
     }
 
     update() {
