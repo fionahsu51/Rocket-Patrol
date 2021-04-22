@@ -111,7 +111,7 @@ class Play extends Phaser.Scene {
             },
             fixedWidth: 100
             }
-            this.timeRight = this.add.text(game.config.width - borderUISize - borderPadding*10, borderUISize + borderPadding*2, this.clock, timeConfig);
+            this.timeLeft = this.add.text(game.config.width - borderUISize - borderPadding*10, borderUISize + borderPadding*2, this.clock, timeConfig);
 
             
     }
