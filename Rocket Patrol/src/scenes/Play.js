@@ -7,8 +7,10 @@ class Play extends Phaser.Scene {
         // load images/tile sprites
         this.load.image('rocket', './assets/butterfly.png');
         this.load.image('spaceship', './assets/flower.png');
-        this.load.image('starfield', './assets/starfield.png');
+        this.load.image('starfield', './assets/grassfield.png');
         this.load.image('blueflower', './assets/blueflower.png');
+        this.load.image('treeleft', './assets/treeleft.png');
+        this.load.image('treeright', './assets/treeright.png');
 
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
@@ -26,7 +28,7 @@ class Play extends Phaser.Scene {
         });
 
         // place tile sprite
-        this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0.5, 0);
+        this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
 
         // add rocket (p1)
         this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0, 0);
@@ -37,13 +39,17 @@ class Play extends Phaser.Scene {
         this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'spaceship', 0, 10).setOrigin(0,0);
 
          // green UI background
-        this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x4972DC).setOrigin(0, 0);
+        this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0xFFFFFF).setOrigin(0, 0);
 
         // white borders
-        this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(0, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
+        this.add.rectangle(0, 0, game.config.width, borderUISize, 0xAAD697).setOrigin(0, 0);
+        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xAAD697).setOrigin(0, 0);
+        this.add.rectangle(0, 0, borderUISize, game.config.height, 0xAAD697).setOrigin(0, 0);
+        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xAAD697).setOrigin(0, 0);
+
+        // border art
+        this.treeleft = this.add.sprite(0, 100, 'treeleft').setOrigin(0, 0);
+        this.treeright = this.add.sprite(game.config.width - borderUISize - borderPadding*3, 100, 'treeright').setOrigin(0,0);
 
         // define keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
@@ -58,7 +64,7 @@ class Play extends Phaser.Scene {
          let scoreConfig = {
          fontFamily: 'Indie Flower',
          fontSize: '28px',
-         backgroundColor: '#E38AC4',
+         backgroundColor: '#46AC19',
          color: '#ebe5dd',
          align: 'right',
          padding: {
@@ -73,7 +79,7 @@ class Play extends Phaser.Scene {
          let fireConfig = {
             fontFamily: 'Indie Flower',
             fontSize: '28px',
-            backgroundColor: '#484473',
+            backgroundColor: '#46AC19',
             color: '#ebe5dd',
             align: 'center',
             padding: {
@@ -102,7 +108,7 @@ class Play extends Phaser.Scene {
         let timeConfig = {
             fontFamily: 'Indie Flower',
             fontSize: '28px',
-            backgroundColor: '#E38AC4',
+            backgroundColor: '#46AC19',
             color: '#ebe5dd',
             align: 'right',
             padding: {
