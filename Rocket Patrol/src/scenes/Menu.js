@@ -6,8 +6,8 @@ class Menu extends Phaser.Scene {
   preload() {
       // load audio
       this.load.audio('sfx_select', './assets/blip_select12.wav');
-      this.load.audio('sfx_explosion', './assets/explosion38.wav');
-      this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+      this.load.audio('sfx_explosion', './assets/flowerget.mp3');
+      this.load.audio('sfx_rocket', './assets/butterflyshoot.mp3');
       this.load.audio('bgmusic', './assets/bgmusic.mp3');
   }
 
@@ -22,8 +22,8 @@ class Menu extends Phaser.Scene {
       let menuConfig = {
           fontFamily: 'Courier',
           fontSize: '28px',
-          backgroundColor: '#F3B141',
-          color: '#843605',
+          backgroundColor: '#f4ae29',
+          color: '#FFFFFF',
           align: 'right',
           padding: {
           top: 5,

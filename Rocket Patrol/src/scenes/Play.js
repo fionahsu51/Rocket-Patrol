@@ -13,7 +13,7 @@ class Play extends Phaser.Scene {
         this.load.image('treeright', './assets/treeright.png');
 
         // load spritesheet
-        this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+        this.load.spritesheet('explosion', './assets/scatter.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
     }
 
     create() {
@@ -103,8 +103,7 @@ class Play extends Phaser.Scene {
             this.gameOver = true;
         }, null, this);
 
-        
-
+        // Display time
         let timeConfig = {
             fontFamily: 'Indie Flower',
             fontSize: '28px',
