@@ -102,22 +102,6 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
-
-        // Display time
-        let timeConfig = {
-            fontFamily: 'Indie Flower',
-            fontSize: '28px',
-            backgroundColor: '#46AC19',
-            color: '#ebe5dd',
-            align: 'right',
-            padding: {
-            top: 5,
-            bottom: 5,
-            },
-            fixedWidth: 100
-            }
-            this.timeLeft = this.add.text(game.config.width - borderUISize - borderPadding*10, borderUISize + borderPadding*2, this.clock, timeConfig);
-
             
     }
 
